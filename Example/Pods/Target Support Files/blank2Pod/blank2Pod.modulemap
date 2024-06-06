@@ -1,0 +1,6 @@
+framework module blank2Pod {
+  umbrella header "blank2Pod-umbrella.h"
+
+  export *
+  module * { export * }
+}

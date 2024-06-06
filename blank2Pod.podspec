@@ -21,14 +21,14 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/x001/blank2Pod'
+  s.homepage         = 'https://github.com/thomaswu001'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'x001' => '88984507@qq.com' }
-  s.source           = { :git => 'https://github.com/x001/blank2Pod.git', :tag => s.version.to_s }
+  s.author           = { 'x001' => 'thomaswu001' }
+  s.source           = { :git => 'https://github.com/thomaswu001/prj2.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'blank2Pod/Classes/**/*'
   
@@ -39,4 +39,7 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  # s.vendored_frameworks="blank2Pod.framework"
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
+
 end

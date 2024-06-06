@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import blank2Pod
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Math1.add(5))
         // Do any additional setup after loading the view, typically from a nib.
     }
 

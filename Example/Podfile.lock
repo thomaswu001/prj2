@@ -1,0 +1,16 @@
+PODS:
+  - blank2Pod (0.1.0)
+
+DEPENDENCIES:
+  - blank2Pod (from `../`)
+
+EXTERNAL SOURCES:
+  blank2Pod:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  blank2Pod: a1e834f1ad666afddc816b40e21c0440590cba0c
+
+PODFILE CHECKSUM: 2aff46c08789f7d313917cee8f7e73b1ce37510a
+
+COCOAPODS: 1.15.2
