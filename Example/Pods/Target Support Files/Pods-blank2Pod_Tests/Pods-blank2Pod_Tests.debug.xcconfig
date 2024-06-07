@@ -1,8 +1,13 @@
+CLANG_CXX_LANGUAGE_STANDARD = c++14
+CLANG_CXX_LIBRARY = libc++
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/blank2Pod"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GZIP" "${PODS_CONFIGURATION_BUILD_DIR}/blank2Pod" "${PODS_ROOT}/MediaPipeTasksCommon/frameworks" "${PODS_ROOT}/MediaPipeTasksVision/frameworks" "${PODS_XCFRAMEWORKS_BUILD_DIR}/MediaPipeTasksCommon" "${PODS_XCFRAMEWORKS_BUILD_DIR}/MediaPipeTasksVision"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/blank2Pod/blank2Pod.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "blank2Pod"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GZIP/GZIP.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/blank2Pod/blank2Pod.framework/Headers" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/LibTorch-Lite-Nightly" $(inherited) "$(PODS_ROOT)/LibTorch-Lite-Nightly/install/include/"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_LDFLAGS = $(inherited) -l"c++" -l"stdc++" -l"z" -framework "AVFoundation" -framework "Accelerate" -framework "AssetsLibrary" -framework "CoreFoundation" -framework "CoreGraphics" -framework "CoreImage" -framework "CoreML" -framework "CoreMedia" -framework "CoreVideo" -framework "GZIP" -framework "MapKit" -framework "MetalPerformanceShaders" -framework "QuartzCore" -framework "UIKit" -force_load $(PODS_ROOT)/LibTorch-Lite-Nightly/install/lib/libtorch.a -force_load $(PODS_ROOT)/LibTorch-Lite-Nightly/install/lib/libtorch_cpu.a
+OTHER_LDFLAGS[sdk=iphoneos*] = $(inherited) -force_load "$(PODS_ROOT)/MediaPipeTasksCommon/frameworks/graph_libraries/libMediaPipeTasksCommon_device_graph.a"
+OTHER_LDFLAGS[sdk=iphonesimulator*] = $(inherited) -force_load "${PODS_ROOT}/MediaPipeTasksCommon/frameworks/graph_libraries/libMediaPipeTasksCommon_simulator_graph.a"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

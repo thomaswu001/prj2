@@ -45,17 +45,21 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/thomaswu001/prj2.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '13.0'
   s.swift_versions = '5.0'
   s.source_files = 'blank2Pod/Classes/**/*'
   
   # s.resource_bundles = {
-  #   'blank2Pod' => ['blank2Pod/Assets/*.png']
+  #   'blank2Pod' => ['blank2Pod/Assets/*']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.static_framework = true
+  s.frameworks = 'UIKit', 'MapKit'
+  s.dependency 'GZIP'
+  s.dependency 'MediaPipeTasksVision','0.10.14'
+  s.dependency  'LibTorch-Lite-Nightly'
+  # s.dependency  'LibTorch-Lite'
   # s.vendored_frameworks="blank2Pod.framework"
   s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
 

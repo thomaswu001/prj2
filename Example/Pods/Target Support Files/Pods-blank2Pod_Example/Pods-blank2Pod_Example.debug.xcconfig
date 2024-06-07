@@ -1,11 +1,15 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+CLANG_CXX_LANGUAGE_STANDARD = c++14
+CLANG_CXX_LIBRARY = libc++
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/blank2Pod"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GZIP" "${PODS_CONFIGURATION_BUILD_DIR}/blank2Pod" "${PODS_ROOT}/MediaPipeTasksCommon/frameworks" "${PODS_ROOT}/MediaPipeTasksVision/frameworks" "${PODS_XCFRAMEWORKS_BUILD_DIR}/MediaPipeTasksCommon" "${PODS_XCFRAMEWORKS_BUILD_DIR}/MediaPipeTasksVision"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/blank2Pod/blank2Pod.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GZIP/GZIP.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/blank2Pod/blank2Pod.framework/Headers" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/LibTorch-Lite-Nightly" $(inherited) "$(PODS_ROOT)/LibTorch-Lite-Nightly/install/include/"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) /usr/lib/swift '@executable_path/Frameworks' '@loader_path/Frameworks'
-LIBRARY_SEARCH_PATHS = $(inherited) "${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" /usr/lib/swift
-OTHER_LDFLAGS = $(inherited) -framework "blank2Pod"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/LibTorch-Lite-Nightly/install/lib" "${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" /usr/lib/swift
+OTHER_LDFLAGS = $(inherited) -ObjC -l"XNNPACK" -l"c++" -l"c10" -l"clog" -l"cpuinfo" -l"eigen_blas" -l"pthreadpool" -l"pytorch_qnnpack" -l"stdc++" -l"torch" -l"torch_cpu" -l"z" -framework "AVFoundation" -framework "Accelerate" -framework "AssetsLibrary" -framework "CoreFoundation" -framework "CoreGraphics" -framework "CoreImage" -framework "CoreML" -framework "CoreMedia" -framework "CoreVideo" -framework "GZIP" -framework "MapKit" -framework "MediaPipeTasksCommon" -framework "MediaPipeTasksVision" -framework "MetalPerformanceShaders" -framework "QuartzCore" -framework "UIKit" -framework "blank2Pod" -force_load $(PODS_ROOT)/LibTorch-Lite-Nightly/install/lib/libtorch.a -force_load $(PODS_ROOT)/LibTorch-Lite-Nightly/install/lib/libtorch_cpu.a
+OTHER_LDFLAGS[sdk=iphoneos*] = $(inherited) -force_load "$(PODS_ROOT)/MediaPipeTasksCommon/frameworks/graph_libraries/libMediaPipeTasksCommon_device_graph.a"
+OTHER_LDFLAGS[sdk=iphonesimulator*] = $(inherited) -force_load "${PODS_ROOT}/MediaPipeTasksCommon/frameworks/graph_libraries/libMediaPipeTasksCommon_simulator_graph.a"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

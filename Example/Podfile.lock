@@ -1,16 +1,40 @@
 PODS:
-  - blank2Pod (0.1.0)
+  - blank2Pod (0.1.0):
+    - GZIP
+    - LibTorch-Lite-Nightly
+    - MediaPipeTasksVision (= 0.10.14)
+  - GZIP (1.3.2)
+  - LibTorch-Lite-Nightly (1.14.0.20221109):
+    - LibTorch-Lite-Nightly/Core (= 1.14.0.20221109)
+  - LibTorch-Lite-Nightly/Core (1.14.0.20221109):
+    - LibTorch-Lite-Nightly/Torch
+  - LibTorch-Lite-Nightly/Torch (1.14.0.20221109)
+  - MediaPipeTasksCommon (0.10.14)
+  - MediaPipeTasksVision (0.10.14):
+    - MediaPipeTasksCommon (= 0.10.14)
 
 DEPENDENCIES:
   - blank2Pod (from `../`)
+  - GZIP
+
+SPEC REPOS:
+  trunk:
+    - GZIP
+    - LibTorch-Lite-Nightly
+    - MediaPipeTasksCommon
+    - MediaPipeTasksVision
 
 EXTERNAL SOURCES:
   blank2Pod:
     :path: "../"
 
 SPEC CHECKSUMS:
-  blank2Pod: a1e834f1ad666afddc816b40e21c0440590cba0c
+  blank2Pod: a4c46782e041fb599ccfaa5200379de5bc4a6810
+  GZIP: 3c0abf794bfce8c7cb34ea05a1837752416c8868
+  LibTorch-Lite-Nightly: 5d5da9f78f653cec0e1998869a87ec9fb98d9431
+  MediaPipeTasksCommon: 5660099c2dd81f7ac4a7a5f51055785ead8e0e64
+  MediaPipeTasksVision: 0fac0db83c0b45e4d7811a9227be5e571403cf83
 
-PODFILE CHECKSUM: 2aff46c08789f7d313917cee8f7e73b1ce37510a
+PODFILE CHECKSUM: 6b96dac28fc782fcf020e1bdac9e0b112d4ca911
 
 COCOAPODS: 1.15.2
