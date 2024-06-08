@@ -52,7 +52,6 @@
 		5DE7FCC2864112176D003420DAE120DA /* hand_landmarker.task in Resources */ = {isa = PBXBuildFile; fileRef = 5862A6552D3EE1E7B1732956B202750C /* hand_landmarker.task */; };
 		60AB7EE29BE91550CDCF712C1F0314AA /* NSData+GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AFB8045FEE278C764551F264F83BFDF /* NSData+GZIP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62941F111E53D6AAE69AB92523B3FB0A /* PalmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30867AC6CAECFB648E625CE22FE5BB3 /* PalmView.swift */; };
-		67B7E5922C12BA19000CA76C /* ZTSDKFW.h in Headers */ = {isa = PBXBuildFile; fileRef = 67B7E58F2C12BA19000CA76C /* ZTSDKFW.h */; };
 		67B7E5932C12BA19000CA76C /* TorchModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 67B7E5902C12BA19000CA76C /* TorchModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67B7E5942C12BA19000CA76C /* TorchModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5912C12BA19000CA76C /* TorchModule.mm */; };
 		7027D9AD9C54DEF3BF9C44C359A2F6E8 /* libT1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A476C7DC6B006A2B7DB08C976BF99C01 /* libT1.swift */; };
@@ -187,7 +186,6 @@
 		5897F2A081E4DDB4DBB60C51113F963C /* blank2Pod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = blank2Pod.release.xcconfig; sourceTree = "<group>"; };
 		5AFB8045FEE278C764551F264F83BFDF /* NSData+GZIP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+GZIP.h"; path = "GZIP/Sources/NSData+GZIP.h"; sourceTree = "<group>"; };
 		5C2A01F15A62027CDE46CFAC3F897381 /* GZIP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GZIP-dummy.m"; sourceTree = "<group>"; };
-		67B7E58F2C12BA19000CA76C /* ZTSDKFW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTSDKFW.h; sourceTree = "<group>"; };
 		67B7E5902C12BA19000CA76C /* TorchModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TorchModule.h; sourceTree = "<group>"; };
 		67B7E5912C12BA19000CA76C /* TorchModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TorchModule.mm; sourceTree = "<group>"; };
 		6CCDFFD88BC70E3ACF00C1BA1412A731 /* LibTorch-Lite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LibTorch-Lite.h"; path = "src/LibTorch-Lite.h"; sourceTree = "<group>"; };
@@ -450,7 +448,6 @@
 				8D5B2C2FE76A8592A00B1E9B58475CE0 /* blank2Pod-umbrella.h */,
 				67B7E5902C12BA19000CA76C /* TorchModule.h */,
 				67B7E5912C12BA19000CA76C /* TorchModule.mm */,
-				67B7E58F2C12BA19000CA76C /* ZTSDKFW.h */,
 				8A01EC9E859E6E2331B2E8FC7BD7C5A7 /* blank2Pod.modulemap */,
 				92A1824CA0AD7FC21B06BD45ED890A19 /* blank2Pod-dummy.m */,
 				71479EB4452F27C1700B8115BDEAA604 /* blank2Pod-Info.plist */,
@@ -595,7 +592,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				67B7E5932C12BA19000CA76C /* TorchModule.h in Headers */,
-				67B7E5922C12BA19000CA76C /* ZTSDKFW.h in Headers */,
 				07852DDD787C9D150BF4D736FDA7D45C /* blank2Pod-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -985,6 +981,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/LibTorch-Lite-Nightly/install/include\"";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1043,6 +1040,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(PODS_ROOT)/LibTorch-Lite-Nightly/install/include/\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1107,6 +1105,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/LibTorch-Lite-Nightly/install/include\"";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1213,6 +1212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(PODS_ROOT)/LibTorch-Lite-Nightly/install/include/\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

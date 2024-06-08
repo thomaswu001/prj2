@@ -1,7 +1,7 @@
 
 import CryptoKit
 import Foundation
-import GZIP
+// import GZIP
 import MediaPipeTasksVision
 import UIKit
 
@@ -528,8 +528,9 @@ class PalmAgent {
         let resultString = code512.map { String(format: "%.5f", $0) }.joined(separator: ",")  
         let str1 = resultString.data(using: .utf8)
         let nsdata: NSData = str1 as! NSData
-        let ziped = nsdata.gzipped()
-        let featureData = ziped?.base64EncodedString()
+        // let ziped = nsdata.gzipped()
+        // let featureData = ziped?.base64EncodedString()
+        let featureData = nsdata.base64EncodedString()
         let body:NSDictionary = [
             "sessionId": _sessionId,
             "deviceId": _deviceId,
